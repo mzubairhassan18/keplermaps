@@ -35,7 +35,7 @@ const CONFIG = {
   output: {
     path: resolve(__dirname, "build"),
     filename: "bundle.js",
-    publicPath: "/",
+    publicPath: "",
   },
   plugins: [
     new HtmlWebpackPlugin({
