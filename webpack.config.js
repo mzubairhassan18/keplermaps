@@ -22,59 +22,64 @@
 // delete the local development overrides at the bottom of this file
 
 // avoid destructuring for older Node version support
-const resolve = require('path').resolve;
-const join = require('path').join;
-const webpack = require('webpack');
+const resolve = require("path").resolve;
+const join = require("path").join;
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const CONFIG = {
   // bundle app.js and everything it imports, recursively.
   entry: {
-    app: resolve('./src/main.js')
+    app: resolve("./src/main.js"),
   },
   output: {
-    path: resolve(__dirname, 'build'),
-    filename: 'bundle.js',
-    publicPath: '/'
+    path: resolve(__dirname, "build"),
+    filename: "bundle.js",
+    publicPath: "/",
   },
-
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "src/index.html", // to import index.html file inside index.js
+    }),
+  ],
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: [".tsx", ".ts", ".js"],
   },
 
-  devtool: 'source-map',
+  devtool: "source-map",
 
   module: {
     rules: [
       {
         test: /\.(js|ts|tsx)$/,
-        loader: 'babel-loader',
-        include: [join(__dirname, 'src')],
-        exclude: [/node_modules/]
-      }
-    ]
+        loader: "babel-loader",
+        include: [join(__dirname, "src")],
+        exclude: [/node_modules/],
+      },
+    ],
   },
 
   node: {
-    fs: 'empty'
+    fs: "empty",
   },
 
   // to support browser history api and remove the '#' sign
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
 
   // Optional: Enables reading mapbox and dropbox client token from environment variable
   plugins: [
     new webpack.EnvironmentPlugin([
-      'MapboxAccessToken',
-      'DropboxClientId',
-      'MapboxExportToken',
-      'CartoClientId'
-    ])
-  ]
+      "MapboxAccessToken",
+      "DropboxClientId",
+      "MapboxExportToken",
+      "CartoClientId",
+    ]),
+  ],
 };
 
 // This line enables bundling against src in this repo rather than installed kepler.gl module
-module.exports = env => {
-  return env ? require('../webpack.config.local')(CONFIG, __dirname)(env) : CONFIG;
+module.exports = (env) => {
+  return CONFIG;
 };

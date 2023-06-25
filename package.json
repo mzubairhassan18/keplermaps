@@ -9,12 +9,9 @@
     "start-local-loaders-src": "webpack-dev-server --mode development --env.es6 --env.loaders_src --progress --hot --open",
     "start-local-hubble-src": "webpack-dev-server --mode development --env.es6 --env.hubble_src --progress --hot --open",
     "start-local-https": "webpack-dev-server --mode development --https --env.es6 --progress --hot --open",
-    "build-clean": "rm -rf ./dist && mkdir dist",
-    "build-script": "webpack -p",
-    "build": "npm run build-clean && npm run build-script"
+    "build": "webpack"
   },
   "dependencies": {
-    "@babel/cli": "^7.21.5",
     "@carto/toolkit": "0.0.1-rc.18",
     "@kepler.gl/actions": "^3.0.0-alpha.0",
     "@kepler.gl/components": "^3.0.0-alpha.0",
@@ -41,12 +38,14 @@
     "styled-components": "^4.1.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.5",
     "@babel/core": "^7.12.1",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
     "@babel/preset-typescript": "^7.16.7",
     "babel-loader": "^8.0.0",
+    "html-webpack-plugin": "^4.5.2",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
     "webpack-dev-middleware": "^3.5.1",
