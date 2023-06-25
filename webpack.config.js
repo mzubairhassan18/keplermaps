@@ -39,7 +39,7 @@ const CONFIG = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html", // to import index.html file inside index.js
+      template: "index.html", // to import index.html file inside index.js
     }),
   ],
   resolve: {
