@@ -17,16 +17,16 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
-import React from 'react';
-import document from 'global/document';
-import {Provider} from 'react-redux';
-import {browserHistory, Router, Route} from 'react-router';
-import {syncHistoryWithStore} from 'react-router-redux';
-import {render} from 'react-dom';
-import store from './store';
-import App from './app';
-import {buildAppRoutes} from './utils/routes';
+require("file-loader?name=[name].[ext]!../index.html");
+import React from "react";
+import document from "global/document";
+import { Provider } from "react-redux";
+import { browserHistory, Router, Route } from "react-router";
+import { syncHistoryWithStore } from "react-router-redux";
+import { render } from "react-dom";
+import store from "./store";
+import App from "./app";
+import { buildAppRoutes } from "./utils/routes";
 
 const history = syncHistoryWithStore(browserHistory, store);
 
@@ -42,4 +42,4 @@ const Root = () => (
   </Provider>
 );
 
-render(<Root />, document.body.appendChild(document.createElement('div')));
+render(<Root />, document.body.appendChild(document.createElement("div")));
