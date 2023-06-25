@@ -8,7 +8,10 @@
     "start-local-deck-src": "webpack-dev-server --mode development --env.es6 --env.deck_src --progress --hot --open",
     "start-local-loaders-src": "webpack-dev-server --mode development --env.es6 --env.loaders_src --progress --hot --open",
     "start-local-hubble-src": "webpack-dev-server --mode development --env.es6 --env.hubble_src --progress --hot --open",
-    "start-local-https": "webpack-dev-server --mode development --https --env.es6 --progress --hot --open"
+    "start-local-https": "webpack-dev-server --mode development --https --env.es6 --progress --hot --open",
+    "build-clean": "rm -rf ./dist && mkdir dist",
+    "build-script": "webpack -p",
+    "build": "npm run build-clean && npm run build-script"
   },
   "dependencies": {
     "@babel/cli": "^7.21.5",
