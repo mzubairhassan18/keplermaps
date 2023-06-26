@@ -59,7 +59,7 @@ const KeplerGl = require("@kepler.gl/components").injectComponents([
 const theme = {
   sidePanelBg: "#141a57",
   titleTextColor: "#fff",
-  sidePanelHeaderBg: "#000",
+  sidePanelHeaderBg: "#141a57",
   subtextColorActive: "#2473bd",
   tooltipBg: "#1869b5",
   tooltipColor: "#ffffff",
@@ -481,6 +481,7 @@ class App extends Component {
                   onExportToCloudSuccess={onExportFileSuccess}
                   onLoadCloudMapSuccess={onLoadCloudMapSuccess}
                   featureFlags={DEFAULT_FEATURE_FLAGS}
+                  appName={"MBRSC"}
                 />
               )}
             </AutoSizer>
