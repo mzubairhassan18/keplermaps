@@ -70,12 +70,10 @@ const CONFIG = {
 
   // Optional: Enables reading mapbox and dropbox client token from environment variable
   plugins: [
-    new webpack.EnvironmentPlugin([
-      "MapboxAccessToken",
-      "DropboxClientId",
-      "MapboxExportToken",
-      "CartoClientId",
-    ]),
+    new webpack.EnvironmentPlugin({
+      ["MapboxAccessToken"]:
+        "pk.eyJ1IjoiaW5hbWtob3NhIiwiYSI6ImNsamJ1OWMyNTI1bG4zbHRleW1uZWxheHMifQ.xzzDY7gHT8rrIcY2PBqDMQ",
+    }),
   ],
 };
 
