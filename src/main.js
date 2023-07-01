@@ -27,6 +27,7 @@ import { render } from "react-dom";
 import store from "./store";
 import App from "./app";
 import { buildAppRoutes } from "./utils/routes";
+import Website from "./website";
 
 const history = syncHistoryWithStore(browserHistory, store);
 
@@ -35,7 +36,10 @@ const appRoute = buildAppRoutes(App);
 const Root = () => (
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}>
+      <Route path="/mrscmaps" component={App}>
+        {appRoute}
+      </Route>
+      <Route path="/" component={Website}>
         {appRoute}
       </Route>
     </Router>

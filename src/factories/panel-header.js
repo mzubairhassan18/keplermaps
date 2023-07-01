@@ -17,28 +17,63 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
+import React from "react";
 import { PanelHeaderFactory, Icons } from "@kepler.gl/components";
 import { BUG_REPORT_LINK, USER_GUIDE_DOC } from "@kepler.gl/constants";
+import logo from "../images/mbrsc.png";
+import styled from "styled-components";
 
-export function CustomPanelHeaderFactory(...deps) {
-  const PanelHeader = PanelHeaderFactory(...deps);
-  const defaultActionItems = PanelHeader.defaultProps.actionItems;
-  PanelHeader.defaultProps = {
-    ...PanelHeader.defaultProps,
-    actionItems: [
-      defaultActionItems.find((item) => item.id === "storage"),
-      {
-        ...defaultActionItems.find((item) => item.id === "save"),
-        label: null,
-        tooltip: "Share",
-      },
-    ],
-  };
-  return PanelHeader;
-}
+// export function CustomPanelHeaderFactory(...deps) {
+//   const PanelHeader = PanelHeaderFactory(...deps);
+//   const defaultActionItems = PanelHeader.defaultProps.actionItems;
+//   PanelHeader.defaultProps = {
+//     ...PanelHeader.defaultProps,
+//     appWebsite: null,
+//     appName: "MBRSC",
+//     version: "1.1.0",
+//     actionItems: [
+//       defaultActionItems.find((item) => item.id === "storage"),
+//       {
+//         ...defaultActionItems.find((item) => item.id === "save"),
+//         label: null,
+//         tooltip: "Share",
+//       },
+//     ],
+//   };
+//   return (
+//     <>
+//       HEllo world
+//       <PanelHeader />
+//     </>
+//   );
+// }
 
-CustomPanelHeaderFactory.deps = PanelHeaderFactory.deps;
+const CustomHeader = () => {
+  return (
+    <StyledHeaderContainer>
+      <StyledImage src={logo} />
+      <h2>MBRSC</h2>
+
+      <Icons.Bug height={"20px"} />
+      <Icons.Save height={"20px"} />
+    </StyledHeaderContainer>
+  );
+};
+
+const StyledHeaderContainer = styled.div`
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: white;
+`;
+const StyledImage = styled.img`
+  width: 40%;
+`;
+
+export const CustomPanelHeaderFactory = () => CustomHeader;
+
+// CustomPanelHeaderFactory.deps = PanelHeaderFactory.deps;
 
 export function replacePanelHeader() {
   return [PanelHeaderFactory, CustomPanelHeaderFactory];

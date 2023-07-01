@@ -56,6 +56,23 @@ const CONFIG = {
         include: [join(__dirname, "src")],
         exclude: [/node_modules/],
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "build/images/",
+              publicPath: "build/images/",
+            },
+          },
+        ],
+      },
     ],
   },
 
@@ -67,6 +84,7 @@ const CONFIG = {
   devServer: {
     historyApiFallback: true,
   },
+  watch: false,
 
   // Optional: Enables reading mapbox and dropbox client token from environment variable
   plugins: [

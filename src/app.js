@@ -57,21 +57,21 @@ const KeplerGl = require("@kepler.gl/components").injectComponents([
   replacePanelHeader(),
 ]);
 const theme = {
-  sidePanelBg: "#141a57",
-  titleTextColor: "#fff",
-  sidePanelHeaderBg: "#141a57",
-  subtextColorActive: "#2473bd",
+  sidePanelBg: "#00aeee",
+  titleTextColor: "#000",
+  sidePanelHeaderBg: "#00aeee",
+  subtextColorActive: "#000",
   tooltipBg: "#1869b5",
   tooltipColor: "#ffffff",
   dropdownListBgd: "#ffffff",
-  textColorHl: "#2473bd",
-  inputBgd: "#f7f7f7",
-  inputBgdHover: "#ffffff",
-  inputBgdActive: "#ffffff",
+  textColorHl: "#000",
+  inputBgd: "#000",
+  inputBgdHover: "#000",
+  inputBgdActive: "#000",
   dropdownListHighlightBg: "#f0f0f0",
   panelBackground: "#f7f7F7",
   panelBackgroundHover: "#f7f7F7",
-  secondaryInputBgd: "#f7f7F7",
+  secondaryInputBgd: "#000",
   secondaryInputBgdActive: "#f7f7F7",
   secondaryInputBgdHover: "#ffffff",
   panelActiveBg: "#f7f7F7",
@@ -176,7 +176,7 @@ class App extends Component {
     //   window.setTimeout(this._showBanner, 3000);
     // }
     // load sample data
-    this._loadSampleData();
+    this._replaceData();
 
     // Notifications
     // this._loadMockNotifications();
@@ -482,6 +482,7 @@ class App extends Component {
                   onLoadCloudMapSuccess={onLoadCloudMapSuccess}
                   featureFlags={DEFAULT_FEATURE_FLAGS}
                   appName={"MBRSC"}
+                  version={null}
                 />
               )}
             </AutoSizer>
