@@ -21,7 +21,7 @@ const CheckSvg = () => (
 
 const OurServices = () => {
   return (
-    <StyledContainer>
+    <StyledContainer id="services">
       <StyledLeft>
         <StyledLogo>
           <img src={logo}></img>
@@ -114,6 +114,13 @@ const StyledServiceImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    padding: 0 18px;
+    margin-top: 0rem;
+    > img {
+      width: 100%;
+    }
+  }
 `;
 
 const StyledLeft = styled.div`
@@ -123,6 +130,10 @@ const StyledLeft = styled.div`
 const StyledContainer = styled.div`
   display: grid;
   grid-template-columns: 25% 75%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 100%;
+  }
 `;
 const StyledHeader = styled.h2`
   display: flex;
@@ -133,6 +144,10 @@ const StyledHeader = styled.h2`
   font-weight: 500;
   line-height: 58px;
   font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 40px;
+    margin-top: 5px;
+  }
 `;
 const StyledRight = styled.div`
   background: url("https://www.sensei.com.pk/wp-content/uploads/2023/06/right.png");

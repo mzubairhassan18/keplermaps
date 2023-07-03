@@ -28,6 +28,10 @@ import store from "./store";
 import App from "./app";
 import { buildAppRoutes } from "./utils/routes";
 import Website from "./website";
+import MyAccount from "./containers/MyAccount";
+import Pricing from "./containers/Pricing";
+import PageCloud from "./containers/PageCloud";
+import OurServices from "./containers/OurServices";
 
 const history = syncHistoryWithStore(browserHistory, store);
 
@@ -42,6 +46,10 @@ const Root = () => (
       <Route path="/" component={Website}>
         {appRoute}
       </Route>
+      <Route path="/my-account" component={MyAccount} />
+      <Route path="/pricing" component={Pricing} />
+      <Route path="/cloud" component={PageCloud} />
+      <Route path="/services" component={OurServices} />
     </Router>
   </Provider>
 );

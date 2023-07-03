@@ -27,6 +27,10 @@ const StyledContainer = styled.div`
   margin: 10px 0px;
   gap: 2rem;
   align-items: center;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    gap: 0rem;
+  }
 `;
 const StyledButton = styled.button`
   color: white;
@@ -36,6 +40,9 @@ const StyledButton = styled.button`
   border-radius: 20px;
   font-weight: bold;
   height: 50px;
+  @media (max-width: 768px) {
+    padding: 2px 15px;
+  }
 `;
 
 export default ConnectHeader;

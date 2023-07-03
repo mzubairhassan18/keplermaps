@@ -11,111 +11,67 @@ import styled from "styled-components";
 const Footer = () => {
   return (
     <StyledContainer>
-      <StyledLogoContainer>
-        <StyledLogo>
-          <img src={logo} />
-        </StyledLogo>
-        <StyledSocial>
-          <AiOutlineFacebook />
-          <AiOutlineLinkedin />
-          <AiOutlineWhatsApp />
-          <AiOutlineYoutube />
-        </StyledSocial>
-      </StyledLogoContainer>
-      <StyledFooterLinks>
-        <StyledHeading>About</StyledHeading>
-        <StyledDescription>
-          Most reliable products and long term support
-        </StyledDescription>
-        <StyledBorder />
+      <StyledLogo>
+        <img src={logo} />
+      </StyledLogo>
+      <StyledQuickLinks>
+        <h3>Quick Links</h3>
         <StyledLinks>
-          <StyledListItem>Services</StyledListItem>
-          <StyledListItem>Data</StyledListItem>
-          <StyledListItem>Cloud</StyledListItem>
-          <StyledListItem>Pricing</StyledListItem>
+          <StyledLink>Services</StyledLink>
+          <StyledLink>Data</StyledLink>
+          <StyledLink>Cloud</StyledLink>
+          <StyledLink>Pricing</StyledLink>
         </StyledLinks>
-      </StyledFooterLinks>
-      <StyledFooterLinks>
-        <StyledHeading>About</StyledHeading>
-        <StyledDescription>
-          Most reliable products and long term support
-        </StyledDescription>
-        <StyledBorder />
-        <StyledLinks>
-          <StyledListItem>Services</StyledListItem>
-          <StyledListItem>Data</StyledListItem>
-          <StyledListItem>Cloud</StyledListItem>
-          <StyledListItem>Pricing</StyledListItem>
-        </StyledLinks>
-      </StyledFooterLinks>
-      <StyledFooterLinks>
-        <StyledHeading>About</StyledHeading>
-        <StyledDescription>
-          Most reliable products and long term support
-        </StyledDescription>
-        <StyledBorder />
-        <StyledLinks>
-          <StyledListItem>Services</StyledListItem>
-          <StyledListItem>Data</StyledListItem>
-          <StyledListItem>Cloud</StyledListItem>
-          <StyledListItem>Pricing</StyledListItem>
-        </StyledLinks>
-      </StyledFooterLinks>
-      <StyledFooterLinks>
-        <StyledHeading>About</StyledHeading>
-        <StyledDescription>
-          Most reliable products and long term support
-        </StyledDescription>
-        <StyledBorder />
-        <StyledLinks>
-          <StyledListItem>Services</StyledListItem>
-          <StyledListItem>Data</StyledListItem>
-          <StyledListItem>Cloud</StyledListItem>
-          <StyledListItem>Pricing</StyledListItem>
-        </StyledLinks>
-      </StyledFooterLinks>
+      </StyledQuickLinks>
+      <StyledSocialLinks>
+        <AiOutlineFacebook />
+        <AiOutlineLinkedin />
+        <AiOutlineWhatsApp />
+        <AiOutlineYoutube />
+      </StyledSocialLinks>
     </StyledContainer>
   );
 };
 
-const StyledContainer = styled.div`
+const StyledSocialLinks = styled.div`
   display: flex;
-  background: #001e37;
-  margin-top: 50px;
-  justify-content: space-around;
-  padding: 20px 0px;
-  color: white;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    gap: 30px;
+    font-size: 25px;
+  }
 `;
-const StyledSocial = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  font-size: 25px;
-  margin-top: 29px;
-`;
-const StyledLogoContainer = styled.div``;
-const StyledLogo = styled.div``;
-const StyledFooterLinks = styled.div``;
-const StyledHeading = styled.h3``;
-const StyledDescription = styled.p`
-  color: #898989;
-  margin: 0;
-  font-size: 9px;
-`;
-const StyledBorder = styled.hr`
-  height: 1.5px;
-  background: #00b9ef;
-  border: none;
+const StyledLink = styled.li`
+  color: #9e9e9e;
 `;
 const StyledLinks = styled.ul`
-  color: #898989;
   list-style: none;
+  display: flex;
+  margin: 0;
   padding: 0;
+  gap: 70px;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    gap: 35px;
+    padding-bottom: 20px;
+  }
 `;
-const StyledListItem = styled.li`
-  margin: 10px 0;
-  letter-spacing: 1.2px;
-  font-size: 12px;
+const StyledQuickLinks = styled.div``;
+const StyledLogo = styled.div``;
+const StyledContainer = styled.div`
+  background: #011e51;
+  display: flex;
+  justify-content: space-around;
+  padding: 37px 0px;
+  margin-top: 30px;
+  color: white;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    gap: 30px;
+  }
 `;
 
 export default Footer;

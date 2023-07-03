@@ -41,6 +41,12 @@ const StyledInfoSection = styled.div`
     font-size: 56px;
     color: white;
   }
+  @media (max-width: 768px) {
+    > h2 {
+      font-size: 39px;
+      padding: 0 10px;
+    }
+  }
 `;
 
 const StyledContainerOuter = styled.div`
@@ -49,8 +55,12 @@ const StyledContainerOuter = styled.div`
 `;
 const StyledContainer = styled.div`
   display: flex;
-
   padding: 10px 100px;
+  @media (max-width: 768px) {
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    flex-flow: wrap-reverse;
+  }
 `;
 const StyledHeading = styled.h2`
   font-size: 50px;

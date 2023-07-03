@@ -20,7 +20,7 @@
 import React from "react";
 import { PanelHeaderFactory, Icons } from "@kepler.gl/components";
 import { BUG_REPORT_LINK, USER_GUIDE_DOC } from "@kepler.gl/constants";
-import logo from "../images/mbrsc.png";
+import logo from "../images/mbrsc_blank.png";
 import styled from "styled-components";
 
 // export function CustomPanelHeaderFactory(...deps) {
