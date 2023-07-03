@@ -3,17 +3,16 @@ import PageHeader from "../PageHeader";
 import Footer from "../Footer";
 import { MdOutlineConstruction } from "react-icons/md";
 import styled from "styled-components";
+import Website from "../../website";
 
 const PageCloud = () => {
   return (
-    <>
-      <PageHeader />
+    <Website>
       <StyledPageInfo>
         <MdOutlineConstruction />
         <h2>This Page is under construction</h2>
       </StyledPageInfo>
-      <Footer />
-    </>
+    </Website>
   );
 };
 

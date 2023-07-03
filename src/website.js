@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
   /* Additional global styles... */
 `;
 
-const Website = () => {
+const Website = ({ children }) => {
   const theme = {
     colors: {
       primary: "#011e51",
@@ -37,15 +37,15 @@ const Website = () => {
         overflowX: "hidden",
         height: "100vh",
         fontFamily: "Roboto, Sans-serif",
+        display: "grid",
+        gridTemplateRows: "auto 1fr auto",
       }}
     >
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <PageHeader />
-        <PageMap />
-        <ConnectHeader />
-        <OurServices />
-        <ExploreMore />
+
+        {children}
         <Footer />
       </ThemeProvider>
     </div>

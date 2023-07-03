@@ -86,6 +86,10 @@ const CONFIG = {
           },
         ],
       },
+      {
+        test: /\.csv$/,
+        use: ["csv-loader"],
+      },
     ],
   },
 

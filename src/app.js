@@ -98,6 +98,7 @@ import sampleIconCsv, {
   config as savedMapConfig,
 } from "./data/sample-icon-csv";
 import sampleGpsData from "./data/sample-gps-data";
+// import MBRSCData from "./data/17-05-2023_AADC_Inventory_dump.csv";
 
 import { processCsvData, processGeojson } from "@kepler.gl/processors";
 /* eslint-enable no-unused-vars */
@@ -408,11 +409,31 @@ class App extends Component {
           },
         ],
         options: {
-          keepExistingConfig: true,
+          centerMap: true,
+          readOnly: false,
         },
+        config: {},
       })
     );
   }
+  // _loadMBRSCData() {
+  //   this.props.dispatch(
+  //     addDataToMap({
+  //       datasets: [
+  //         {
+  //           info: {
+  //             label: "MBRSC Data",
+  //             id: "mbrsc-data",
+  //           },
+  //           data: processCsvData(MBRSCData),
+  //         },
+  //       ],
+  //       options: {
+  //         keepExistingConfig: true,
+  //       },
+  //     })
+  //   );
+  // }
   _toggleCloudModal = () => {
     // TODO: this lives only in the demo hence we use the state for now
     // REFCOTOR using redux

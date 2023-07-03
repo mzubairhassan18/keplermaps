@@ -4,6 +4,7 @@ import Signup from "./Signup";
 import PageHeader from "../PageHeader";
 import Footer from "../Footer";
 import styled from "styled-components";
+import Website from "../../website";
 
 const MyAccount = () => {
   const [activeComponent, setActiveComponent] = useState("login");
@@ -12,8 +13,7 @@ const MyAccount = () => {
   };
 
   return (
-    <>
-      <PageHeader />
+    <Website>
       <StyledAccountButtons>
         <StyledButton
           onClick={() => {
@@ -35,8 +35,7 @@ const MyAccount = () => {
       <StyledAccountsComponents>
         {activeComponent == "login" ? <Login /> : <Signup />}
       </StyledAccountsComponents>
-      <Footer />
-    </>
+    </Website>
   );
 };
 

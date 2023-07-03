@@ -32,6 +32,8 @@ import MyAccount from "./containers/MyAccount";
 import Pricing from "./containers/Pricing";
 import PageCloud from "./containers/PageCloud";
 import OurServices from "./containers/OurServices";
+import PageHome from "./containers/PageHome";
+import PageData from "./containers/PageData";
 
 const history = syncHistoryWithStore(browserHistory, store);
 
@@ -43,12 +45,13 @@ const Root = () => (
       <Route path="/mrscmaps" component={App}>
         {appRoute}
       </Route>
-      <Route path="/" component={Website}>
+      <Route path="/" component={PageHome}>
         {appRoute}
       </Route>
       <Route path="/my-account" component={MyAccount} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/cloud" component={PageCloud} />
+      <Route path="/data" component={PageData} />
       <Route path="/services" component={OurServices} />
     </Router>
   </Provider>
